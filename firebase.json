@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "vet-clinics-493413-eeb43",
     "public": "dist",
     "ignore": [
       "firebase.json",

@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
+      - run: echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> .env
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

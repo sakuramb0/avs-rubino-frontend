@@ -27,7 +27,7 @@ function App() {
     fetchContent();
   }, []);
 
-  const generalInfo = content.filter(item => item.type === 'general_info');
+  const siteInfo = content.find(item => item.type === 'general_info') || null;
   const galleryItems = content.filter(item => item.type === 'gallery');
 
   return (
@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route 
             path="/" 
-            element={<Home generalInfo={generalInfo} loading={loading} />} 
+            element={<Home siteInfo={siteInfo} loading={loading} />} 
           />
           <Route path="/services" element={<Services />} />
           <Route 

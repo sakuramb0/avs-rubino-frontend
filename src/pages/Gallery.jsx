@@ -28,7 +28,7 @@ export default function Gallery({ galleryItems, loading }) {
                 className="group relative aspect-square overflow-hidden rounded-2xl bg-slate-200 shadow-sm hover:shadow-xl transition-all duration-300"
               >
                 <img 
-                  src={item.imageUrl} 
+                  src={item.url} 
                   alt={item.title || 'Foto della clinica'} 
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

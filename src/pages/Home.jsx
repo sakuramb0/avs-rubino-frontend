@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = ({ generalInfo, loading }) => {
+const Home = ({ siteInfo, loading }) => {
   const services = [
     {
       title: 'Cura animali esotici',
@@ -24,8 +24,17 @@ const Home = ({ generalInfo, loading }) => {
     }
   ];
 
-  const notices = generalInfo?.filter(item => item.content?.toLowerCase().includes('avviso') || item.title?.toLowerCase().includes('avviso')) || [];
-  const hours = generalInfo?.filter(item => item.content?.toLowerCase().includes('orar') || item.title?.toLowerCase().includes('orar')) || [];
+  // Legge i campi direttamente dall'oggetto siteInfo salvato dall'admin
+  const avvisiText = siteInfo?.avvisi || '';
+  const orariFormia = siteInfo?.orariFormia || '';
+  const orariSecondoStudio = siteInfo?.orariSecondoStudio || '';
+
+  // Splitta per righe per poter mostrare ogni avviso/orario come elemento separato
+  const avvisiLines = avvisiText.split('\n').filter(line => line.trim());
+  const orariFormiaLines = orariFormia.split('\n').filter(line => line.trim());
+  const orariSecondoStudioLines = orariSecondoStudio.split('\n').filter(line => line.trim());
+
+  const hasHours = orariFormiaLines.length > 0 || orariSecondoStudioLines.length > 0;
 
   return (
     <div className="flex flex-col gap-16 pb-16">
@@ -81,7 +90,7 @@ const Home = ({ generalInfo, loading }) => {
       <section className="bg-slate-100 py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Notices */}
+            {/* Notices / Avvisi */}
             <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-teal-500">
               <h2 className="text-2xl mb-6 flex items-center gap-3">
                 <span className="text-teal-500">🔔</span> Avvisi Importanti
@@ -91,11 +100,11 @@ const Home = ({ generalInfo, loading }) => {
                   <div className="h-4 bg-slate-200 rounded w-3/4"></div>
                   <div className="h-4 bg-slate-200 rounded w-1/2"></div>
                 </div>
-              ) : notices.length > 0 ? (
-                <ul className="space-y-4">
-                  {notices.map((item, idx) => (
-                    <li key={idx} className="p-4 bg-teal-50 rounded-lg text-teal-800 text-sm">
-                      <strong>{item.title}</strong>: {item.content}
+              ) : avvisiLines.length > 0 ? (
+                <ul className="space-y-3">
+                  {avvisiLines.map((line, idx) => (
+                    <li key={idx} className="p-4 bg-teal-50 rounded-lg text-teal-800 text-sm leading-relaxed">
+                      {line}
                     </li>
                   ))}
                 </ul>
@@ -104,7 +113,7 @@ const Home = ({ generalInfo, loading }) => {
               )}
             </div>
 
-            {/* Hours */}
+            {/* Hours / Orari */}
             <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-500">
               <h2 className="text-2xl mb-6 flex items-center gap-3">
                 <span className="text-blue-500">🕒</span> Orari di Apertura
@@ -114,14 +123,35 @@ const Home = ({ generalInfo, loading }) => {
                   <div className="h-4 bg-slate-200 rounded w-3/4"></div>
                   <div className="h-4 bg-slate-200 rounded w-1/2"></div>
                 </div>
-              ) : hours.length > 0 ? (
-                <div className="space-y-4">
-                  {hours.map((item, idx) => (
-                    <div key={idx} className="flex justify-between items-center py-2 border-b border-slate-50 last:border-0">
-                      <span className="font-medium text-slate-700">{item.title || 'Orario'}</span>
-                      <span className="text-slate-600">{item.content}</span>
+              ) : hasHours ? (
+                <div className="space-y-6">
+                  {/* Orari Formia */}
+                  {orariFormiaLines.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-3">📍 Studio Formia</h3>
+                      <div className="space-y-2">
+                        {orariFormiaLines.map((line, idx) => (
+                          <div key={idx} className="py-2 px-3 bg-blue-50/50 rounded-lg text-slate-700 text-sm border-b border-blue-100/50 last:border-0">
+                            {line}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  ))}
+                  )}
+
+                  {/* Orari Secondo Studio */}
+                  {orariSecondoStudioLines.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-3">📍 Secondo Studio</h3>
+                      <div className="space-y-2">
+                        {orariSecondoStudioLines.map((line, idx) => (
+                          <div key={idx} className="py-2 px-3 bg-blue-50/50 rounded-lg text-slate-700 text-sm border-b border-blue-100/50 last:border-0">
+                            {line}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="space-y-2 text-slate-600">

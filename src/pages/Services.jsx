@@ -30,7 +30,7 @@ const Services = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">I Nostri Servizi Specialistici</h1>
           <p className="text-slate-500 max-w-2xl mx-auto">
-            La Clinica Rubino offre cure mediche di eccellenza supportate dalle più moderne tecnologie diagnostiche.
+            L'AVS Rubino offre cure mediche di eccellenza supportate dalle più moderne tecnologie diagnostiche.
           </p>
         </div>
         

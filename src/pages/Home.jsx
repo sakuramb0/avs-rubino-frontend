@@ -164,7 +164,7 @@ const Home = ({ siteInfo, loading }) => {
               <span className="text-teal-300">amici a quattro zampe</span>
             </h1>
             <p className="text-xl text-teal-50/90 mb-10 leading-relaxed max-w-2xl">
-              Professionalità, tecnologia e amore si incontrano nella Clinica Veterinaria Rubino. 
+              Professionalità, tecnologia e amore si incontrano nell'AVS Rubino (Ambulatorio Veterinario Specialistico). 
               Siamo pronti a prenderci cura di ogni membro della tua famiglia.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -264,7 +264,7 @@ const Home = ({ siteInfo, loading }) => {
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
             className="absolute inset-0 w-full h-full"
-            title="Mappa Clinica Veterinaria Rubino"
+            title="Mappa AVS Rubino"
           ></iframe>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute top-4 right-4 md:top-6 md:right-6 z-10 text-center w-[calc(100%-2rem)] md:w-auto md:min-w-[300px]">

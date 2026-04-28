@@ -254,7 +254,7 @@ const Home = ({ siteInfo, loading }) => {
 
       {/* Map Section */}
       <section className="container mx-auto px-4">
-        <div className="bg-slate-200 rounded-3xl h-96 flex items-center justify-center relative overflow-hidden">
+        <div className="bg-slate-200 rounded-3xl h-96 relative overflow-hidden">
           <iframe 
             src="https://maps.google.com/maps?q=Via%20dell'Olmo%203,%20Formia&t=h&z=16&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
@@ -267,11 +267,11 @@ const Home = ({ siteInfo, loading }) => {
             title="Mappa Clinica Veterinaria Rubino"
           ></iframe>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="relative z-10 text-center">
-            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl max-w-sm mx-auto">
+          <div className="absolute top-4 right-4 md:top-6 md:right-6 z-10 text-center w-[calc(100%-2rem)] md:w-auto md:min-w-[300px]">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
               <h3 className="text-lg mb-2 font-bold text-slate-800">Vieni a Trovarci</h3>
               <p className="text-slate-600 text-sm mb-4 italic">via dell'Olmo 3, Formia (LT)</p>
-              <a href="https://maps.google.com/maps?q=Via%20dell'Olmo%203,%20Formia" target="_blank" rel="noopener noreferrer" className="inline-block w-full py-2 px-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors">
+              <a href="https://maps.google.com/maps?q=Via%20dell'Olmo%203,%20Formia" target="_blank" rel="noopener noreferrer" className="inline-block w-full py-2 px-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors shadow">
                 Apri in Maps
               </a>
             </div>

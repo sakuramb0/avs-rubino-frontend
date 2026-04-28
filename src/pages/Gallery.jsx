@@ -7,7 +7,7 @@ export default function Gallery({ galleryItems, loading }) {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">La Nostra Struttura</h1>
           <p className="text-slate-500 max-w-2xl mx-auto">
-            Sfoglia le foto della nostra clinica e dei nostri pazienti. Utilizziamo tecnologie all'avanguardia in un ambiente accogliente.
+            Sfoglia le foto del nostro ambulatorio e dei nostri pazienti. Utilizziamo tecnologie all'avanguardia in un ambiente accogliente.
           </p>
         </div>
         
@@ -29,7 +29,7 @@ export default function Gallery({ galleryItems, loading }) {
               >
                 <img 
                   src={item.url} 
-                  alt={item.title || 'Foto della clinica'} 
+                  alt={item.title || 'Foto dell\'ambulatorio'} 
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">

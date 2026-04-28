@@ -14,7 +14,7 @@ const Navbar = () => {
                 </svg>
               </div>
               <span className="text-xl font-bold text-slate-900 tracking-tight">
-                Clinica<span className="text-teal-600">Rubino</span>
+                AVS <span className="text-teal-600">Rubino</span>
               </span>
             </Link>
           </div>

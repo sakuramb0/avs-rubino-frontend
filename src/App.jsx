@@ -41,7 +41,7 @@ function App() {
             path="/" 
             element={<Home siteInfo={siteInfo} loading={loading} />} 
           />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services" element={<Services siteInfo={siteInfo} />} />
           <Route 
             path="/gallery" 
             element={<Gallery galleryItems={galleryItems} loading={loading} />} 

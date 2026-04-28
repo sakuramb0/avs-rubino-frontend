@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ScheduleDisplay from '../components/ScheduleDisplay';
+import BookingModal from '../components/BookingModal';
 
 const Home = ({ siteInfo, loading }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const services = [
     {
       title: 'Cura animali esotici',
@@ -58,13 +62,25 @@ const Home = ({ siteInfo, loading }) => {
               Professionalità, tecnologia e amore si incontrano nell'AVS Rubino (Ambulatorio Veterinario Specialistico). 
               Siamo pronti a prenderci cura di ogni membro della tua famiglia.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-teal-700 hover:bg-teal-50 px-8 py-4 rounded-xl font-bold shadow-lg transition-all">
-                Prenota una Visita
+            <div className="flex flex-wrap gap-4 mt-8">
+              <button 
+                disabled
+                className="bg-slate-100 text-slate-400 font-bold py-4 px-6 rounded-xl cursor-not-allowed text-center border border-slate-200"
+              >
+                Prenota online
               </button>
-              <button className="border-2 border-teal-300/50 text-white hover:bg-teal-600 px-8 py-4 rounded-xl font-bold transition-all">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-white text-teal-700 hover:bg-teal-50 px-6 py-4 rounded-xl font-bold shadow-lg transition-all"
+              >
+                Prenota via contatti
+              </button>
+              <Link 
+                to="/services" 
+                className="border-2 border-teal-300/50 text-white hover:bg-teal-600 px-8 py-4 rounded-xl font-bold transition-all flex items-center justify-center"
+              >
                 I Nostri Servizi
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -169,6 +185,12 @@ const Home = ({ siteInfo, loading }) => {
           </div>
         </div>
       </section>
+
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        siteInfo={siteInfo} 
+      />
     </div>
   );
 };

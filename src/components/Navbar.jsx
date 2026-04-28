@@ -9,8 +9,8 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2 group">
               <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white group-hover:bg-teal-700 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2c-1.7 0-3 1.6-3 3.5s1.3 3.5 3 3.5 3-1.6 3-3.5S13.7 2 12 2zm-5.5 5.5C5 7.5 4 8.7 4 10.2c0 1.5 1.1 2.8 2.5 2.8S9 11.7 9 10.2C9 8.7 7.9 7.5 6.5 7.5zm11 0c-1.4 0-2.5 1.2-2.5 2.7 0 1.5 1.1 2.8 2.5 2.8S20 11.7 20 10.2c0-1.5-1.1-2.7-2.5-2.7zM12 11c-2.6 0-5 2.2-5 5.5 0 2.2 1.8 4 3.8 4h2.4c2 0 3.8-1.8 3.8-4 0-3.3-2.4-5.5-5-5.5z"/>
                 </svg>
               </div>
               <span className="text-xl font-bold text-slate-900 tracking-tight">

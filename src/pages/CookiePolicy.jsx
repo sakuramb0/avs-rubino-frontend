@@ -48,7 +48,7 @@ const CookiePolicy = () => {
 
         <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Contatti</h2>
         <p>
-          Per qualsiasi domanda relativa alla nostra politica sui cookie, puoi contattarci all'indirizzo email: <strong>pasquale-orlando@libero.it</strong>.
+          Per qualsiasi domanda relativa alla nostra politica sui cookie, puoi contattarci all'indirizzo email: <strong>avsrubino@gmail.it</strong>.
         </p>
       </div>
     </div>

@@ -25,7 +25,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-lg font-bold mb-4">Contatti</h3>
             <p className="text-sm mb-2">Tel: 328 173 1924</p>
-            <p className="text-sm mb-6">Email: pasquale-orlando@libero.it</p>
+            <p className="text-sm mb-6">Email: avsrubino@gmail.it</p>
             
             <div className="flex gap-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" title="Facebook">

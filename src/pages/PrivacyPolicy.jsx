@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
           <li>Opporti al trattamento dei dati.</li>
         </ul>
         <p className="mt-4">
-          Per esercitare questi diritti, puoi contattarci all'indirizzo email: <strong>pasquale-orlando@libero.it</strong>.
+          Per esercitare questi diritti, puoi contattarci all'indirizzo email: <strong>avsrubino@gmail.it</strong>.
         </p>
       </div>
     </div>
